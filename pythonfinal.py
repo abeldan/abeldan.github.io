@@ -1,6 +1,6 @@
 import math
 
-##User Inputs
+##User Inputs##
 employment = raw_input("")
 population = raw_input("")
 CBDEmployment = raw_input("")
@@ -9,12 +9,15 @@ personaltimecost = raw_input("")
 tripcost = raw_input("")
 buildingcost = raw_input("")
 
-e = math.e()
+e = math.e() #Initialize e as Euler's Numbeer
 
-##Algorithim
+##Algorithim##
 TripsExpected = ((population+employment)*(CBDEmployment))/((triptime*personaltimecost)+tripcost)
 OutputWeightedIndex=((population+employment)*abs((employment/population)+1)^-(e^-1))/(TripsExpected/buildingcost)
 
-##Outputs
+##Outputs##
 
-##Exceptions
+
+##Exceptions##
+except Exception:
+  print Exception
