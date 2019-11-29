@@ -18,7 +18,7 @@ e = math.e() #Initialize e as Euler's Numbeer
 
 ##Algorithim##  Created by : Allan Beldan
 TripsExpected = ((population+employment)*(CBDEmployment))/((triptime*personaltimecost)+tripcost)
-OutputWeightedIndex=((population+employment)*abs((employment/population)+1)^-(e^-1))/(TripsExpected/buildingcost)
+OutputWeightedIndex=((population+employment)*abs((employment/population)+1)**-(e**-1))/(TripsExpected/buildingcost)
 ##Outputs##
 Print ""
 
