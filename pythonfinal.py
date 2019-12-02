@@ -80,7 +80,7 @@ while True:
       print( "Not a valid input for density")
         # anything over150 density
     else : 
-        print("Values accepted, proceed for output)
+        print("Values accepted, proceed for output")
               
              
 
