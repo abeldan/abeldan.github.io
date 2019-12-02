@@ -10,14 +10,18 @@ def questionchecker(question, upperrange, lowerrange): #introduces error checkin
     if numeric == False:
       print("Error: Non-numeric value selected. Please try again")
     if output < upperrange or output >lowerrange:
-      continueyn = raw_input("Warning: Value is outside of expected range of between " + str(lowerrange) + " and " + str(upperrange) + ". Errors may result. Continue? Y/N.")
-      if continueyn.lower() == "n":
-        output = -1
-        print("Enter new value")
-      else:
-        print("Continuing with selected values. Errors may result.")
-        return float(output)
-        break
+      continueyn = "purple"
+      while continueyn.lower() != "y" or continueyn.lower() != "n":
+        continueyn = raw_input("Warning: Value is outside of expected range of between " + str(lowerrange) + " and " + str(upperrange) + ". Errors may result. Continue? Y/N.")
+        if continueyn.lower() == "n":
+          output = -1
+          print("Enter new value")
+        elif continueyn.lower() == "y":
+          print("Continuing with selected values. Errors may result.")
+          return float(output)
+          break
+        else:
+          print"please select y or n"
 
 ##Expected Values##    Created by: Allan Beldan
 employmentupper = 3000
