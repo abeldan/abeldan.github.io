@@ -27,6 +27,10 @@ triptimeupper = 120
 triptimelower = 20
 buildingcostupper = 2000000000
 buildingcostlower = 500000000
+personaltimecostlower = 10
+perstonaltimecostupper = 50
+tripcostlower = 0.5
+tripcostupper = 5
 
 ##User Inputs##       Created by : Abhinay Arora
 Print "---------------------------SITE SUITABILITY ANALYSIS FOR A METRO STATION---------------------------"
@@ -35,8 +39,8 @@ employment = questionchecker("Employment Around The Station: ",employmentupper,e
 population = questionchecker("Population of the City: ",populationupper,populationlower)
 CBDEmployment = questionchecker("CBDEmployment",CBDEmplloymentupper,CBDEmploymentlower)
 triptime = questionchecker("Time Consumed During Each Trip: ",triptimeupper,triptimelower)
-personaltimecost = raw_input("Cost of Personal Time(per hour): ")
-tripcost = raw_input("Cost of Trip, in US Dollars: ")
+personaltimecost = questionchecker("Cost of Personal Time(per hour): ",personaltimecostupper, personaltimecostlower)
+tripcost = questionchecker("Cost of Trip, in US Dollars: ",tripcostupper, tripcostlower)
 buildingcost = questionchecker("Cost of Infrastructure, in US Dollars: ",buildingcostupper,buildingcostlower)
 
 e = math.e() #Initialize e as Euler's Number
