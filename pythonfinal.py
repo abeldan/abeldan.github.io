@@ -1,4 +1,4 @@
-#Program Contributers: Abhinay Arora,Allan Beldan
+#Program Contributers: Abhinay Arora,Allan Beldan,Ramon Boyce
 #This Program checks the Site suitability for a metro station based upon various factors such as Employment,Population,TripTime,PersonalTimeCost,Cost of trip and infrastructural Cost.
 import math
 def questionchecker(question, upperrange, lowerrange): #introduces error checking at initial input, and gives user chance to enter new values if incorrect values are entered
@@ -61,12 +61,27 @@ Print ""
 ##Exceptions##
 while True:
    try:
-     x = int(input("Please the population density: "))
-    x = int(input("Please the employment density: "))
+     pop = int(input("Please the population density: "))
         break
-      if x < 0
-  raise ValueError("Sorry, that is not a valid input value")
+      if pop < 0
+  raise ValueError("Sorry, no values less than 0")
   
- 
+ while True:
+    pop = input ("Please enter poulation density: ")
+    emp = input ("Please enter employment density: ")
+    try:
+        pop = int(pop)
+        emp = int(emp)
+        #raise ValueError("Non numeric value")
+    except :
+        print ('Non numeric data found.')
+        continue    
+    if pop > 150:
+      print( "Not a valid input for density")
+        # anything over150 density
+    else : 
+        print("Values accepted, proceed for output)
+              
+             
 
     
