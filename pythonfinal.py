@@ -1,20 +1,23 @@
 #Program Contributers: Abhinay Arora,Allan Beldan,Ramon Boyce
 #This Program checks the Site suitability for a metro station based upon various factors such as Employment,Population,TripTime,PersonalTimeCost,Cost of trip and infrastructural Cost.
-import math
+from math import e
 def questionchecker(question, upperrange, lowerrange): #introduces error checking at initial input, and gives user chance to enter new values if incorrect values are entered
   output = -1
   while output > upperrange or output < lowerrange:
     output = raw_input(question)
-    numeric = output.numeric()
+    outputuni = unicode(output, "utf-8")
+    numeric = outputuni.isnumeric()
     if numeric == False:
       print("Error: Non-numeric value selected. Please try again")
     if output < upperrange or output >lowerrange:
-      continue = raw_input("Warning: Value is outside of expected range of between " + lowerrange + " and " + upperrange + ". Errors may result. Continue? Y/N.")
-      if continue.lower() == "n":
+      continueyn = raw_input("Warning: Value is outside of expected range of between " + str(lowerrange) + " and " + str(upperrange) + ". Errors may result. Continue? Y/N.")
+      if continueyn.lower() == "n":
         output = -1
         print("Enter new value")
       else:
         print("Continuing with selected values. Errors may result.")
+        return float(output)
+        break
 
 ##Expected Values##    Created by: Allan Beldan
 employmentupper = 3000
@@ -28,22 +31,20 @@ triptimelower = 20
 buildingcostupper = 2000000000
 buildingcostlower = 500000000
 personaltimecostlower = 10
-perstonaltimecostupper = 50
+personaltimecostupper = 50
 tripcostlower = 0.5
 tripcostupper = 5
 
 ##User Inputs##       Created by : Abhinay Arora
-Print "---------------------------SITE SUITABILITY ANALYSIS FOR A METRO STATION---------------------------"
-Print "---------------------------------------------------------------------------------------------------"
+print "---------------------------SITE SUITABILITY ANALYSIS FOR A METRO STATION---------------------------"
+print "---------------------------------------------------------------------------------------------------"
 employment = questionchecker("Employment Around The Station: ",employmentupper,employmentlower)
 population = questionchecker("Population of the City: ",populationupper,populationlower)
-CBDEmployment = questionchecker("CBDEmployment",CBDEmplloymentupper,CBDEmploymentlower)
+CBDEmployment = questionchecker("CBDEmployment",CBDEmploymentupper,CBDEmploymentlower)
 triptime = questionchecker("Time Consumed During Each Trip: ",triptimeupper,triptimelower)
 personaltimecost = questionchecker("Cost of Personal Time(per hour): ",personaltimecostupper, personaltimecostlower)
 tripcost = questionchecker("Cost of Trip, in US Dollars: ",tripcostupper, tripcostlower)
 buildingcost = questionchecker("Cost of Infrastructure, in US Dollars: ",buildingcostupper,buildingcostlower)
-
-e = math.e() #Initialize e as Euler's Number
 
 ##Algorithim##  Created by : Allan Beldan
 TripsExpected = ((population+employment)*(CBDEmployment))/((triptime*personaltimecost)+tripcost)
@@ -60,32 +61,31 @@ if OutputWeightedIndex >= 8000:
 else:
   recommendweight = False
 ##Outputs##
-Print ""
+print recommendtrips
+print recommendweight
 
 ##Exceptions##
-while True:
-   try:
-     pop = int(input("Please the population density: "))
-        break
-      if pop < 0
-  raise ValueError("Sorry, no values less than 0")
-  
- while True:
-    pop = input ("Please enter poulation density: ")
-    emp = input ("Please enter employment density: ")
-    try:
-        pop = int(pop)
-        emp = int(emp)
-        #raise ValueError("Non numeric value")
-    except :
-        print ('Non numeric data found.')
-        continue    
-    if pop > 150:
-      print( "Not a valid input for density")
-        # anything over150 density
-    else : 
-        print("Values accepted, proceed for output")
-              
-             
-
-    
+#==============================================================================
+# while True:
+#    try:
+#      pop = int(input("Please the population density: "))
+#      break
+#      if pop < 0:
+#          raise ValueError("Sorry, no values less than 0")
+# 
+# while True:
+#     pop = input ("Please enter poulation density: ")
+#     emp = input ("Please enter employment density: ")
+#     try:
+#         pop = int(pop)
+#         emp = int(emp)
+#         #raise ValueError("Non numeric value")
+#     except :
+#         print ('Non numeric data found.')
+#         continue    
+#     if pop > 150:
+#       print( "Not a valid input for density")
+#         # anything over150 density
+#     else : 
+#         print("Values accepted, proceed for output")
+#==============================================================================
