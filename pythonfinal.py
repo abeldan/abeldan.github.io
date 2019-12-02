@@ -59,5 +59,14 @@ else:
 Print ""
 
 ##Exceptions##
-except Exception:
-  print Exception
+while True:
+   try:
+     x = int(input("Please the population density: "))
+    x = int(input("Please the employment density: "))
+        break
+      if x < 0
+  raise ValueError("Sorry, that is not a valid input value")
+  
+ 
+
+    
