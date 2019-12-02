@@ -1,8 +1,6 @@
 #Program Contributers: Abhinay Arora,Allan Beldan
 #This Program checks the Site suitability for a metro station based upon various factors such as Employment,Population,TripTime,PersonalTimeCost,Cost of trip and infrastructural Cost.
-
 import math
-
 def questionchecker(question, upperrange, lowerrange): #introduces error checking at initial input, and gives user chance to enter new values if incorrect values are entered
   output = -1
   while output > upperrange or output < lowerrange:
@@ -33,13 +31,13 @@ buildingcostlower = 500000000
 ##User Inputs##       Created by : Abhinay Arora
 Print "---------------------------SITE SUITABILITY ANALYSIS FOR A METRO STATION---------------------------"
 Print "---------------------------------------------------------------------------------------------------"
-employment = raw_input("Employment Around The Station: ")
-population = raw_input("Population of the City: ")
-CBDEmployment = raw_input("")
-triptime = raw_input("Time Consumed During Each Trip: ")
+employment = questionchecker("Employment Around The Station: ",employmentupper,employmentlower)
+population = questionchecker("Population of the City: ",populationupper,populationlower)
+CBDEmployment = questionchecker("CBDEmployment",CBDEmplloymentupper,CBDEmploymentlower)
+triptime = questionchecker("Time Consumed During Each Trip: ",triptimeupper,triptimelower)
 personaltimecost = raw_input("Cost of Personal Time(per hour): ")
 tripcost = raw_input("Cost of Trip, in US Dollars: ")
-buildingcost = raw_input("Cost of Infrastructure, in US Dollars: ")
+buildingcost = questionchecker("Cost of Infrastructure, in US Dollars: ",buildingcostupper,buildingcostlower)
 
 e = math.e() #Initialize e as Euler's Number
 
@@ -50,6 +48,7 @@ OutputWeightedIndex=((population+employment)*abs((employment/population)+1)**-(e
 ##Process outputs## Created by: Allan Beldan
 if TripsExpected >= 1000:
   recommendtrips = True
+  print "This Site is suitable to build a metro station!"
 else:
   recommendtrips = False
 if OutputWeightedIndex >= 8000:
