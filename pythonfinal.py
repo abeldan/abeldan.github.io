@@ -9,7 +9,8 @@ while True:
     try:
         ##Def Statements##      Created by : Allan Beldan
         def questionchecker(question, upperrange, lowerrange): #introduces error checking at initial input, and gives user chance to enter new values if incorrect values are entered
-          while True:
+         ## Exceptions##  Created by: Ramon Boyce
+        while True:
               try:
                   output = -1
                   while output > upperrange or output < lowerrange:
@@ -110,16 +111,6 @@ while True:
         print recommendtrips
         print recommendweight
         
-## Exceptions ##    Created by : Ramon Boyce
-    except ValueError:
-        print "Error: Non-numeric data detected. Please enter the data again"
-        print ValueError
-    except Exception:
-        print "General Error: Program Failed"
-        print Exception
-          while True:
-              try:
-                  output < 0
-                except ValueError
-                print "Error, No negative values"
+
+    
             
