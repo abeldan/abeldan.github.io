@@ -107,9 +107,15 @@ while True:
           recommendweight = False
           
           
-        ##Outputs##
-        print recommendtrips
-        print recommendweight
+        ##Outputs## Created by Navjot K Sodhi
+        if recommendtrips == True:
+            print"Based on the number of projected trips, construction is recommended."
+        else:
+            print"Based on the raw number of trips, construction is not recommended."
+        if recommendedweight == True:
+            print"Based on the recommended weight, construction is recommended."
+        else:
+            print"Based on the recommended weight, construction is not recommended."
         
 
     
