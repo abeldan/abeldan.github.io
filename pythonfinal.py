@@ -1,4 +1,4 @@
-#Program Contributers: Abhinay Arora,Allan Beldan,Ramon Boyce
+#Program Contributers: Abhinay Arora,Allan Beldan,Ramon Boyce,Navjot Kaur Sodhi
 #This Program checks the Site suitability for a metro station based upon various factors such as Employment,Population,TripTime,PersonalTimeCost,Cost of trip and infrastructural Cost.
 
 #Import Packages
