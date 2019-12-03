@@ -37,22 +37,22 @@ while True:
                               print"please select y or n"
                   except ValueError:
                       print "Invalid data. Please try again"
-                            ##Outputs## Created by Navjot K Sodhi
-                            
-        def outputs(recommendtrips, recommendedweight): ##Outputs## Created by: Navjot Kaur Singh
+        
+        ##Outputs## Created by Navjot K Sodhi
+        def outputs(TripsExpected, OutputWeightedIndex): ##Outputs## Created by: Navjot Kaur Singh
             if TripsExpected >= 1000:
                recommendtrips = True
-                else:
-                  recommendtrips = False
-                if OutputWeightedIndex >= 8000:
-                  recommendweight = True
-                else:
-                  recommendweight = False
+            else:
+                recommendtrips = False
+            if OutputWeightedIndex >= 8000:
+                recommendweight = True
+            else:
+                recommendweight = False
             if recommendtrips == True:
                 print"Based on the number of projected trips, construction is recommended."
             else:
                 print"Based on the raw number of trips, construction is not recommended."
-            if recommendedweight == True:
+            if recommendweight == True:
                 print"Based on the weighted index, construction is recommended."
             else:
                 print"Based on the weighted index, construction is not recommended."
@@ -90,6 +90,9 @@ while True:
                 ##Algorithim##  Created by : Allan Beldan
                 TripsExpected = ((population+employment)*(CBDEmployment))/((triptime*personaltimecost)+tripcost)
                 OutputWeightedIndex=((population+employment)*abs((employment/population)+1)**-(e**-1))/(TripsExpected/buildingcost)
+                
+                #Outputs
+                outputs(TripsExpected, OutputWeightedIndex)
             
             elif datasource.lower() == "c":
                 try:
@@ -106,13 +109,17 @@ while True:
                             personaltimecost = row['Personal Time Cost']
                             tripcost = row['Trip Cost']
                             buildingcost = row['Construction Cost']
+                            
                             ##Algorithim##  Created by : Allan Beldan
                             TripsExpected = ((population+employment)*(CBDEmployment))/((triptime*personaltimecost)+tripcost)
                             OutputWeightedIndex=((population+employment)*abs((employment/population)+1)**-(e**-1))/(TripsExpected/buildingcost)
+                            
+                            #Run Outputs
+                            outputs(TripsExpected, OutputWeightedIndex)
                 except csv.Error:
                     print "Problem with input file"
                     print csv.Error
-                            
+        
 ## Exceptions ##    Created by : Ramon Boyce
     except ValueError:
         print "Error: Non-numeric data detected. Please enter the data again"
