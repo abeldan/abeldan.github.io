@@ -98,7 +98,6 @@ while True:
         ##Process outputs## Created by: Allan Beldan
         if TripsExpected >= 1000:
           recommendtrips = True
-          print "This Site is suitable to build a metro station!"
         else:
           recommendtrips = False
         if OutputWeightedIndex >= 8000:
