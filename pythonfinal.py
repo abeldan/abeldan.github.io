@@ -117,7 +117,9 @@ while True:
     except Exception:
         print "General Error: Program Failed"
         print Exception
-        except ValueError:
-        print "No negative numbers"
-        print ValueError
+          while True:
+              try:
+                  output < 0
+                except ValueError
+                print "Error, No negative values"
             
