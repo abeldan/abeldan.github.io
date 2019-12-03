@@ -112,3 +112,11 @@ while True:
                 except csv.Error:
                     print "Problem with input file"
                     print csv.Error
+                            
+## Exceptions ##    Created by : Ramon Boyce
+    except ValueError:
+        print "Error: Non-numeric data detected. Please enter the data again"
+        print ValueError
+    except Exception:
+        print "General Error: Program Failed"
+        print Exception
