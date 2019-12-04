@@ -97,7 +97,7 @@ while True:
     ## Ask User if data is to be imported from CSV or entered manually
             datasource = ""
             while datasource.lower() != "c" or datasource.lower() != "m":
-                datasource = raw_input("Would you like to import the data from a CSV or Manually type in each figure? C for CSV, M for Manually: ")
+                datasource = raw_input("Would you like to import the data from a CSV or Manually type in each figure, or Exit? C for CSV, M for Manually E for Exit: ")
                 if datasource.lower() == "m":
                     employment = questionchecker("Employment Around The Station: ",employmentupper,employmentlower)
                     population = questionchecker("Population Around The Station: ",populationupper,populationlower)
@@ -119,7 +119,7 @@ while True:
                         filelocation = raw_input("What is the location of the input file?")
                         if filelocation.endswith(".csv") == False:
                             filelocation =  filelocation + ".csv"
-                        if filelocation == 'd.csv':
+                        if filelocation == 'd.csv': #Default Test Data location
                             filelocation = r"c:\Users\awbel\TestData.csv"
                         input_employment = []
                         input_population = []
@@ -132,6 +132,7 @@ while True:
                             reader = csv.DictReader(csvfile) #CSV Reader and Processing lifted from Allan's Windspeed 3.0 file
                             for row in reader:
                                 try:
+                                    #Backup values
                                     input_employment_old = input_employment
                                     input_population_old = input_population
                                     input_CBDEmployment_old = input_CBDEmployment
@@ -139,6 +140,8 @@ while True:
                                     input_personaltimecost_old = input_personaltimecost
                                     input_tripcost_old = input_tripcost
                                     input_buildingcost_old = input_buildingcost
+                                    
+                                    #append new values
                                     input_employment.append(int(row['Employment']))
                                     input_population.append(int(row['Population']))
                                     input_CBDEmployment.append(int(row['CentralBusinessDistrictPopEmployment']))
@@ -149,6 +152,7 @@ while True:
                                     print("Data imported successfully")
                                 except TypeError, err:
                                     print "Error in row " + str(row) + ". Skipping row"
+                                    #Revert to old values in event of failure
                                     input_employment = input_employment_old
                                     input_population = input_population_old
                                     input_CBDEmployment = input_CBDEmployment_old
@@ -184,17 +188,22 @@ while True:
                                 
                                 #Run Outputs
                                 outputs(TripsExpected, OutputWeightedIndex, input_employment[index], input_population[index], input_CBDEmployment[index], input_triptime[index], input_personaltimecost[index], input_tripcost[index], input_buildingcost[index])
-    
+                            
     
                     except csv.Error:
                         print "Problem with input file"
                         print csv.Error
-            
+                    except IndexError:
+                        print "Reached end of list unexpectedly"
+                        print IndexError
+                elif datasource.lower() == "e":
+                    sys.exit()
+                else:
+                    print "Invalid entry. Please try again"
     # Exceptions ##    Created by : Ramon Boyce
     except ValueError:
         print "Error: Non-numeric data detected. Please enter the data again"
         print ValueError
     except Exception:
         print "General Error: Program Failed"
-        print 'Error on line {}'.format(sys.exc_info()[-1].tb_lineno)
         print Exception
