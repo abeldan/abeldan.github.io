@@ -41,7 +41,7 @@ while True:
                           print "Invalid data. Please try again"
             
             ##Outputs## Created by Navjot K Sodhi
-            def outputs(TripsExpected, OutputWeightedIndex, employment, population, CBDEmployment, triptime, personaltimecost, tripcost, buildingcost): ##Outputs## Created by: Navjot Kaur Singh
+            def outputs(TripsExpected, OutputWeightedIndex, employment, population, CBDEmployment, triptime, personaltimecost, tripcost, buildingcost): ##Outputs## Created by: Navjot Kaur Sodhi
                 if TripsExpected >= 1000:
                    recommendtrips = True
                 else:
