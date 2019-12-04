@@ -186,7 +186,7 @@ while True:
                                 TripsExpected = ((input_population[index]+input_employment[index])*(input_CBDEmployment[index]))/((input_triptime[index]*input_personaltimecost[index])+input_tripcost[index])
                                 OutputWeightedIndex=((input_population[index]+input_employment[index])*abs((input_employment[index]/input_population[index])+1)**-(e**-1))/(TripsExpected/input_buildingcost[index])
                                 
-                                #Run Outputs
+                                #Run Outputs## Created by Navjot K Sodhi
                                 outputs(TripsExpected, OutputWeightedIndex, input_employment[index], input_population[index], input_CBDEmployment[index], input_triptime[index], input_personaltimecost[index], input_tripcost[index], input_buildingcost[index])
                             
     
